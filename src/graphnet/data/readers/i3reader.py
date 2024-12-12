@@ -49,6 +49,7 @@ class I3Reader(GraphNeTFileReader):
         # checks
         assert isinstance(gcd_rescue, str)
         # Set verbosity
+        from icecube import icetray
         if icetray_verbose == 0:
             icetray.I3Logger.global_logger = icetray.I3NullLogger()
 

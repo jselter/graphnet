@@ -22,6 +22,7 @@ class FEATURES:
         "pmt_dir_y",
         "pmt_dir_z",
         "dom_type",
+        "truth_flag",
     ]
     PROMETHEUS = [
         "sensor_pos_x",

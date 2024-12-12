@@ -227,6 +227,7 @@ class I3FeatureExtractorIceCubeUpgrade(I3FeatureExtractorIceCube86):
             "pmt_dir_x": [],
             "pmt_dir_y": [],
             "pmt_dir_z": [],
+            "truth_flag": [],
         }
 
         # Add features from IceCube86
@@ -252,10 +253,12 @@ class I3FeatureExtractorIceCubeUpgrade(I3FeatureExtractorIceCube86):
 
             # Loop over pulses for each OM
             pulses = data[om_key]
-            for _ in pulses:
+            t_flags = frame["truth_flags"][om_key]
+            for _,f in zip(pulses,t_flags):
                 output["pmt_dir_x"].append(pmt_dir_x)
                 output["pmt_dir_y"].append(pmt_dir_y)
                 output["pmt_dir_z"].append(pmt_dir_z)
+                output["truth_flag"].append(f)
 
         return output
 
